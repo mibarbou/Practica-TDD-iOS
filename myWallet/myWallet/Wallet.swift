@@ -56,6 +56,62 @@ class Wallet  {
     
     }
     
+    func takeMoneyAt(indexPath indexPath: NSIndexPath) -> Bool {
+        
+        let currenciesArray = Array(currencies).sort { $0 < $1 }
+        
+        
+        if indexPath.section == currenciesArray.count {
+            // es la seccion TOTAL
+            return false
+            
+        } else {
+            
+            let currency = currenciesArray[indexPath.section]
+            
+            var moneys = dict[currency]!
+            
+            if indexPath.row == moneys.count{
+                // es la seccion SUBTotal
+                return false
+                
+            } else {
+                
+                moneys.removeAtIndex(indexPath.row)
+                
+                dict[currency] = moneys
+                
+                return true
+            }
+        }
+    }
+    
+    func checkEditableMoneyAt(indexPath indexPath: NSIndexPath) -> Bool {
+        
+        let currenciesArray = Array(currencies).sort { $0 < $1 }
+        
+        
+        if indexPath.section == currenciesArray.count {
+            // es la seccion TOTAL
+            return false
+            
+        } else {
+            
+            let currency = currenciesArray[indexPath.section]
+            
+            let moneys = dict[currency]!
+            
+            if indexPath.row == moneys.count{
+                // es la seccion SUBTotal
+                return false
+                
+            } else {
+                
+                return true
+            }
+        }
+    }
+    
     
     func moneyAt(indexPath indexPath : NSIndexPath) -> Money {
         

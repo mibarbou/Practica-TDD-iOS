@@ -54,7 +54,27 @@ class WalletTests: XCTestCase {
         XCTAssertEqual(wallet.currencies.count, 1)
     }
     
-    func testTakeMoney() {
+    func testTakeMoneyAtIndexPath() {
+        
+        let wallet = Wallet()
+        
+        let euro1 = Money.euroWith(amount: 5)
+        let euro2 = Money.euroWith(amount: 10)
+        let dollar1 = Money.dollarWith(amount: 1)
+        let dollar2 = Money.dollarWith(amount: 2)
+        
+        wallet.add(money: dollar1)
+        wallet.add(money: euro2)
+        wallet.add(money: dollar2)
+        wallet.add(money: euro1)
+        
+        let removed = wallet.takeMoneyAt(indexPath: NSIndexPath(forRow: 0, inSection: 1))
+        
+        XCTAssertTrue(removed)
+        
+        let notRemoved = wallet.takeMoneyAt(indexPath: NSIndexPath(forRow: 1, inSection: 1))
+        
+        XCTAssertFalse(notRemoved)
         
 //        let wallet = Wallet()
 //        

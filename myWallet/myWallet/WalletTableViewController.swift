@@ -28,6 +28,11 @@ class WalletTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.title = "myWallet"
+        
+        let addButton = UIBarButtonItem(barButtonSystemItem: .Add, target: self, action: #selector(addNewMoney))
+        self.navigationItem.leftBarButtonItem = addButton
+        
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
         
@@ -85,45 +90,40 @@ class WalletTableViewController: UITableViewController {
      // Override to support conditional editing of the table view.
      override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
      // Return false if you do not want the specified item to be editable.
-     return true
+        return model.checkEditableMoneyAt(indexPath: indexPath)
      }
  
     
-    /*
+    
      // Override to support editing the table view.
      override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-     if editingStyle == .Delete {
-     // Delete the row from the data source
-     tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
-     } else if editingStyle == .Insert {
-     // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
+        
+         if editingStyle == .Delete {
+         // Delete the row from the data source
+        
+            let removed = model.takeMoneyAt(indexPath: indexPath)
+            
+            if removed {
+            
+                tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
+                
+                tableView.reloadData()
+            }
+
+         } else if editingStyle == .Insert {
+         // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
+         }
      }
-     }
-     */
     
-    /*
-     // Override to support rearranging the table view.
-     override func tableView(tableView: UITableView, moveRowAtIndexPath fromIndexPath: NSIndexPath, toIndexPath: NSIndexPath) {
-     
-     }
-     */
+    func addNewMoney()  {
+        
+        // Mejora, mostrar un AlertController en el que poder introducir el amount y el currency que vamos a añadir
+        model.add(money: Money.euroWith(amount: 10))
+        
+        tableView.reloadData()
+    }
+ 
     
-    /*
-     // Override to support conditional rearranging of the table view.
-     override func tableView(tableView: UITableView, canMoveRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-     // Return false if you do not want the item to be re-orderable.
-     return true
-     }
-     */
-    
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-     // Get the new view controller using segue.destinationViewController.
-     // Pass the selected object to the new view controller.
-     }
-     */
+   
     
 }
