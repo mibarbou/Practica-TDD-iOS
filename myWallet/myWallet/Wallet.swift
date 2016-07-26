@@ -81,6 +81,11 @@ class Wallet  {
                 
                 dict[currency] = moneys
                 
+                if moneys.count == 0 {
+                    
+                    currencies.remove(currency)
+                }
+                
                 return true
             }
         }

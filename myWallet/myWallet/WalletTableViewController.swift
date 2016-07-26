@@ -105,7 +105,7 @@ class WalletTableViewController: UITableViewController {
             
             if removed {
             
-                tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
+//                tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
                 
                 tableView.reloadData()
             }
