@@ -12,7 +12,15 @@
 		D06CCD4E1D3E43C0004870E5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D06CCD4C1D3E43C0004870E5 /* Main.storyboard */; };
 		D06CCD501D3E43C0004870E5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D06CCD4F1D3E43C0004870E5 /* Assets.xcassets */; };
 		D06CCD531D3E43C0004870E5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D06CCD511D3E43C0004870E5 /* LaunchScreen.storyboard */; };
-		D06CCD5E1D3E43C0004870E5 /* myWalletTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D06CCD5D1D3E43C0004870E5 /* myWalletTests.swift */; };
+		D0EDA6451D4601B900D989C6 /* Money.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0EDA6441D4601B900D989C6 /* Money.swift */; };
+		D0EDA6461D4601B900D989C6 /* Money.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0EDA6441D4601B900D989C6 /* Money.swift */; };
+		D0EDA6481D46087F00D989C6 /* MoneyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0EDA6471D46087F00D989C6 /* MoneyTests.swift */; };
+		D0EDA64A1D468A3000D989C6 /* BrokerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0EDA6491D468A3000D989C6 /* BrokerTests.swift */; };
+		D0EDA64C1D468BAD00D989C6 /* Broker.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0EDA64B1D468BAD00D989C6 /* Broker.swift */; };
+		D0EDA64D1D468BAD00D989C6 /* Broker.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0EDA64B1D468BAD00D989C6 /* Broker.swift */; };
+		D0EDA6521D46BFDE00D989C6 /* WalletTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0EDA6511D46BFDE00D989C6 /* WalletTests.swift */; };
+		D0EDA6541D46C2C300D989C6 /* Wallet.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0EDA6531D46C2C300D989C6 /* Wallet.swift */; };
+		D0EDA6551D46C2C300D989C6 /* Wallet.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0EDA6531D46C2C300D989C6 /* Wallet.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,8 +42,13 @@
 		D06CCD521D3E43C0004870E5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D06CCD541D3E43C0004870E5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D06CCD591D3E43C0004870E5 /* myWalletTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = myWalletTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		D06CCD5D1D3E43C0004870E5 /* myWalletTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = myWalletTests.swift; sourceTree = "<group>"; };
 		D06CCD5F1D3E43C0004870E5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D0EDA6441D4601B900D989C6 /* Money.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Money.swift; sourceTree = "<group>"; };
+		D0EDA6471D46087F00D989C6 /* MoneyTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoneyTests.swift; sourceTree = "<group>"; };
+		D0EDA6491D468A3000D989C6 /* BrokerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BrokerTests.swift; sourceTree = "<group>"; };
+		D0EDA64B1D468BAD00D989C6 /* Broker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Broker.swift; sourceTree = "<group>"; };
+		D0EDA6511D46BFDE00D989C6 /* WalletTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WalletTests.swift; sourceTree = "<group>"; };
+		D0EDA6531D46C2C300D989C6 /* Wallet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Wallet.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +90,7 @@
 		D06CCD471D3E43C0004870E5 /* myWallet */ = {
 			isa = PBXGroup;
 			children = (
+				D06CCD6B1D3E4CD2004870E5 /* Models */,
 				D06CCD481D3E43C0004870E5 /* AppDelegate.swift */,
 				D06CCD4A1D3E43C0004870E5 /* ViewController.swift */,
 				D06CCD4C1D3E43C0004870E5 /* Main.storyboard */,
@@ -90,10 +104,22 @@
 		D06CCD5C1D3E43C0004870E5 /* myWalletTests */ = {
 			isa = PBXGroup;
 			children = (
-				D06CCD5D1D3E43C0004870E5 /* myWalletTests.swift */,
 				D06CCD5F1D3E43C0004870E5 /* Info.plist */,
+				D0EDA6471D46087F00D989C6 /* MoneyTests.swift */,
+				D0EDA6491D468A3000D989C6 /* BrokerTests.swift */,
+				D0EDA6511D46BFDE00D989C6 /* WalletTests.swift */,
 			);
 			path = myWalletTests;
+			sourceTree = "<group>";
+		};
+		D06CCD6B1D3E4CD2004870E5 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				D0EDA6441D4601B900D989C6 /* Money.swift */,
+				D0EDA64B1D468BAD00D989C6 /* Broker.swift */,
+				D0EDA6531D46C2C300D989C6 /* Wallet.swift */,
+			);
+			name = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -197,7 +223,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D0EDA6541D46C2C300D989C6 /* Wallet.swift in Sources */,
+				D0EDA64C1D468BAD00D989C6 /* Broker.swift in Sources */,
 				D06CCD4B1D3E43C0004870E5 /* ViewController.swift in Sources */,
+				D0EDA6451D4601B900D989C6 /* Money.swift in Sources */,
 				D06CCD491D3E43C0004870E5 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -206,7 +235,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D06CCD5E1D3E43C0004870E5 /* myWalletTests.swift in Sources */,
+				D0EDA6551D46C2C300D989C6 /* Wallet.swift in Sources */,
+				D0EDA64D1D468BAD00D989C6 /* Broker.swift in Sources */,
+				D0EDA6461D4601B900D989C6 /* Money.swift in Sources */,
+				D0EDA6481D46087F00D989C6 /* MoneyTests.swift in Sources */,
+				D0EDA64A1D468A3000D989C6 /* BrokerTests.swift in Sources */,
+				D0EDA6521D46BFDE00D989C6 /* WalletTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -390,6 +424,7 @@
 				D06CCD641D3E43C0004870E5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D06CCD651D3E43C0004870E5 /* Build configuration list for PBXNativeTarget "myWalletTests" */ = {
 			isa = XCConfigurationList;
@@ -398,6 +433,7 @@
 				D06CCD671D3E43C0004870E5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
