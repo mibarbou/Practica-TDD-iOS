@@ -8,21 +8,14 @@
 
 import Foundation
 
-protocol Accountable {
-    
-    init(amount: Double, currency: String)
-    
-    func times(multiplier: Double) -> Money
-    
-    func plus(money: Money) -> Money
-    
-}
 
 class Money : Equatable {
     
     private(set) var amount : Double
     
     private(set) var currency : String
+    
+    var isSubTotal = false
     
     init(amount: Double, currency: String){
         

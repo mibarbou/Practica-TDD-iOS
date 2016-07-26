@@ -71,7 +71,10 @@ class WalletTableViewController: UITableViewController {
         return cell!
     }
     
-    
+    override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        
+        return model.sectionNameAt(index: section)
+    }
     
      // Override to support conditional editing of the table view.
      override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {

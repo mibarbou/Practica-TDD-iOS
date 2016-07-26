@@ -74,7 +74,11 @@ class Wallet  {
             
             if indexPath.row == moneys.count{
                 // es la seccion SUBTotal
-                return reduceTo(currency: currency, broker: broker)
+                let money = reduceTo(currency: currency, broker: broker)
+                
+                money.isSubTotal = true
+                
+                return money
 
             } else {
                 
@@ -93,6 +97,36 @@ class Wallet  {
         }
         
         return moneyCountFor(currency: currenciesArray[index]) + 1
+    }
+    
+    func sectionNameAt(index index: Int) -> String {
+        
+        let currenciesArray = Array(currencies).sort { $0 < $1 }
+        
+        
+        if index == currenciesArray.count {
+            // es la seccion TOTAL
+            return "TOTAL"
+            
+        } else {
+            
+            let currency = currenciesArray[index]
+            
+            if currency == "USD" {
+            
+                return "DOLARES"
+                
+            } else if currency == "EUR" {
+                
+                return "EUROS"
+                
+            } else {
+                
+                return ""
+            }
+ 
+        }
+        
     }
     
     func moneyCountFor(currency currency: String) -> Int {

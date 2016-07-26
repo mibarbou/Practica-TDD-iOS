@@ -24,17 +24,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         let euro1 = Money.euroWith(amount: 20)
         let euro2 = Money.euroWith(amount: 10)
+        let euro3 = Money.euroWith(amount: 50)
         let dollar1 = Money.dollarWith(amount: 10)
-        let dollar2 = Money.dollarWith(amount: 2)
+        let dollar2 = Money.dollarWith(amount: 5)
         let dollar3 = Money.dollarWith(amount: 50)
+        let dollar4 = Money.dollarWith(amount: 20)
         
         let wallet = Wallet(broker: broker)
         
+        wallet.add(money: euro3)
         wallet.add(money: dollar3)
         wallet.add(money: euro1)
         wallet.add(money: euro2)
         wallet.add(money: dollar1)
         wallet.add(money: dollar2)
+        wallet.add(money: dollar4)
         
         let walletVC = WalletTableViewController(model: wallet)
         

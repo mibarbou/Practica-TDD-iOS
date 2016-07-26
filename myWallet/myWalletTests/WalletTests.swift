@@ -138,6 +138,25 @@ class WalletTests: XCTestCase {
         
     }
     
+    func testSectionName()  {
+        
+        let wallet = Wallet()
+        
+        let euro1 = Money.euroWith(amount: 5)
+        let euro2 = Money.euroWith(amount: 10)
+        let dollar1 = Money.dollarWith(amount: 1)
+        let dollar2 = Money.dollarWith(amount: 2)
+        
+        wallet.add(money: dollar1)
+        wallet.add(money: euro2)
+        wallet.add(money: dollar2)
+        wallet.add(money: euro1)
+        
+        let name = wallet.sectionNameAt(index: 1)
+        
+        XCTAssertEqual(name, "DOLARES")
+    }
+    
     func testNumberOfSectionsInWallet() {
         
         let wallet = Wallet()
