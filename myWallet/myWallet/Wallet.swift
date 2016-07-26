@@ -120,6 +120,14 @@ class Wallet  {
                 
                 return "EUROS"
                 
+            } else  if currency == "GBP"{
+                
+                return "LIBRAS"
+                
+            } else  if currency == "JPY"{
+                
+                return "YENES"
+                
             } else {
                 
                 return ""

@@ -21,6 +21,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let broker = Broker()
         
         broker.addRate(1.12, fromCurrency:"EUR", toCurrency:"USD")
+        broker.addRate(1.31, fromCurrency: "GBP", toCurrency: "USD")
+        broker.addRate(0.01, fromCurrency: "JPY", toCurrency: "USD")
+
         
         let euro1 = Money.euroWith(amount: 20)
         let euro2 = Money.euroWith(amount: 10)
@@ -29,6 +32,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let dollar2 = Money.dollarWith(amount: 5)
         let dollar3 = Money.dollarWith(amount: 50)
         let dollar4 = Money.dollarWith(amount: 20)
+        
+        let pound1 = Money(amount: 10, currency: "GBP")
+        let pound2 = Money(amount: 50, currency: "GBP")
+        
+        let yen1 = Money(amount: 2000, currency: "JPY")
+        let yen2 = Money(amount: 500, currency: "JPY")
+
         
         let wallet = Wallet(broker: broker)
         
@@ -39,6 +49,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         wallet.add(money: dollar1)
         wallet.add(money: dollar2)
         wallet.add(money: dollar4)
+        wallet.add(money: pound1)
+        wallet.add(money: pound2)
+        wallet.add(money: yen1)
+        wallet.add(money: yen2)
+
         
         let walletVC = WalletTableViewController(model: wallet)
         

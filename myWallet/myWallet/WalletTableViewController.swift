@@ -66,7 +66,13 @@ class WalletTableViewController: UITableViewController {
         // Configure the cell...
         let money = model.moneyAt(indexPath: indexPath)
         
-        cell!.textLabel?.text = "\(money.currency) \(money.amount)"
+        if money.isSubTotal {
+            
+            cell!.textLabel?.text = "Subtotal: \(money.currency) \(money.amount)"
+        } else {
+        
+            cell!.textLabel?.text = "\(money.currency) \(money.amount)"
+        }
         
         return cell!
     }
