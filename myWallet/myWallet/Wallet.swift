@@ -61,21 +61,26 @@ class Wallet  {
         
         let currenciesArray = Array(currencies).sort { $0 < $1 }
 
-        let currency = currenciesArray[indexPath.section]
-        
-        let moneys = dict[currency]!
         
         if indexPath.section == currenciesArray.count {
             // es la seccion TOTAL
             return total()
             
-        } else if indexPath.row == moneys.count{
-            // es la seccion SUBTotal
-            return reduceTo(currency: currency, broker: broker)
+        } else {
+            
+            let currency = currenciesArray[indexPath.section]
+            
+            let moneys = dict[currency]!
+            
+            if indexPath.row == moneys.count{
+                // es la seccion SUBTotal
+                return reduceTo(currency: currency, broker: broker)
 
-        }
-        
-        return moneys[indexPath.row]
+            } else {
+                
+                return moneys[indexPath.row]
+            }
+        } 
     }
     
     func rowsInSection(index: Int) -> Int {
